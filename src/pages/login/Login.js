@@ -20,6 +20,7 @@ class Login extends React.Component {
   handleSubmit() {
     console.log(this.state.passwordVal);
     document.cookie = `authorization=${this.state.passwordVal}`;
+    window.location.replace("/statistic/airdrop");
     // this.setState(prevState => ({
     //   isToggleOn: !prevState.isToggleOn
     // }));

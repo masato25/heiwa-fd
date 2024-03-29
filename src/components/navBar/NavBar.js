@@ -4,12 +4,20 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import iconPlur from 'materials/eukhch1U.png';
 
 export default function NarBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="/main">平和てき</Navbar.Brand>
+        <Navbar.Brand href="/main" style={{display: "flex"}}>
+          <div>
+            <img src={iconPlur} />
+          </div>
+          <div>
+            Heiwa
+          </div>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
