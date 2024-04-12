@@ -123,7 +123,7 @@ export default function App() {
                     TVL
                     </Heading>
                     <Text pt='1' fontSize='md'>
-                    {Data['total_staked_balance'] / 1e18 + Data['total_ticket_balance'] / 1e18}
+                    {Data['total_staked_balance'] / 1e18}
                     </Text>
                   </Box>
                   <Box>
@@ -139,7 +139,7 @@ export default function App() {
                     Total User Staked ETH
                     </Heading>
                     <Text pt='1' fontSize='md'>
-                    {Data['total_staked_balance'] / 1e18}
+                    {Data['total_ticket_balance'] / 1e18}
                     </Text>
                   </Box>
                 </CardBody>
