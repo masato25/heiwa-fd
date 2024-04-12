@@ -4,7 +4,7 @@ import st from 'settings.js';
 const injectAxios = {
   getAxios: () => {
     const myCookie = decodeURIComponent(document.cookie);
-    const secret = myCookie.match(/authorization=([^\s]+)/m) || ["","test"];
+    const secret = myCookie.match(/heiwa_secret=([^\s;]+)/m) || ["","test"];
     const api = axios.create({
       baseURL: st.baseURL,
       headers: {
@@ -14,7 +14,7 @@ const injectAxios = {
     });
     api.interceptors.response.use((response) => response, (error) => {
       console.error(error);
-      window.location.replace("/login");
+      window.location.replace(`${st.fedRoot}/login`);
     });
     return api;
   }

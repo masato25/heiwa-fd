@@ -68,10 +68,10 @@ export default function App() {
                 <CardBody>
                   <div>
                     <div>
-                      User count: {Data.bridgedETHUsersDistributedPoints} 
+                      User count: {Data.countOfBridgedETHUsers} 
                     </div>
                     <div>
-                      Distributed  points: {Data.countOfBridgedETHUsers}
+                      Distributed  points: {Data.bridgedETHUsersDistributedPoints}
                     </div>
                   </div>
                 </CardBody>

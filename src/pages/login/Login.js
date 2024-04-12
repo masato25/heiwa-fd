@@ -5,6 +5,7 @@ import {
   FormControl, FormLabel, Input, FormHelperText,
   Button, Box, Heading, Text
 } from '@chakra-ui/react';
+import st from 'settings';
 
 class Login extends React.Component {
   constructor(props) {
@@ -19,8 +20,12 @@ class Login extends React.Component {
 
   handleSubmit() {
     console.log(this.state.passwordVal);
-    document.cookie = `authorization=${this.state.passwordVal}`;
-    window.location.replace("/statistic/airdrop");
+    const myCookie = decodeURIComponent(document.cookie);
+    const secret = myCookie.match(/heiwa_secret=([^\s;]+)/m)
+    if (!secret || secret.length === 0) {
+      document.cookie = `heiwa_secret=${this.state.passwordVal}`;
+    }
+    window.location.replace(`${st.fedRoot}/statistic/airdrop`);
     // this.setState(prevState => ({
     //   isToggleOn: !prevState.isToggleOn
     // }));

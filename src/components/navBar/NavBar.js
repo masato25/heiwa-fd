@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'components/navBar/NavBar.css';
+import st from 'settings';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -10,7 +11,7 @@ export default function NarBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="/main" style={{display: "flex"}}>
+        <Navbar.Brand href={`${st.fedRoot}/main`} style={{display: "flex"}}>
           <div>
             <img src={iconPlur} />
           </div>
@@ -21,10 +22,11 @@ export default function NarBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/main">Home</Nav.Link>
+            <Nav.Link href={`${st.fedRoot}/main`}>Home</Nav.Link>
             {/* <Nav.Link href="/airdrop">Airdrop</Nav.Link> */}
             <NavDropdown title="Statistic" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/statistic/airdrop">Airdrop</NavDropdown.Item>
+              <NavDropdown.Item href={`${st.fedRoot}/statistic/general`}>General</NavDropdown.Item>
+              <NavDropdown.Item href={`${st.fedRoot}/statistic/airdrop`}>Airdrop</NavDropdown.Item>
               {/* <NavDropdown.Item href="#action/3.2">
                 Another action
               </NavDropdown.Item>
