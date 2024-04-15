@@ -3,7 +3,7 @@ import NavBar from 'components/navBar/NavBar.js';
 import injectAxios from "plugins/injectAxios.js";
 import React from "react";
 import st from "settings.js";
-import { background } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 import {
   Card, CardHeader, CardBody, Breadcrumb, Heading,
@@ -13,7 +13,11 @@ import {
 
 export default function App() {
   const [Data, setData] = React.useState(
-    {"bridgedETHUsersDistributedPoints":"0","countOfBridgedETHUsers":"0","twitteredDistributedPoints":"0","twitteredUserCount":"0"}
+    {
+      "bridgedETHUsersDistributedPoints":"0","countOfBridgedETHUsers":"0",
+      "twitteredDistributedPoints":"0","twitteredUserCount":"0",
+      "friendTechDistributedPoints": "0", "friendTechUserCount": "0",
+    }
   );
 
   React.useEffect(() => {
@@ -49,14 +53,22 @@ export default function App() {
                   <Heading size='md'>Twitter Airdrop</Heading>
                 </CardHeader>
                 <CardBody>
-                  <div>
-                    <div>
-                      User count: {Data.twitteredUserCount} 
-                    </div>
-                    <div>
-                      Distributed  points: {Data.twitteredDistributedPoints}
-                    </div>
-                  </div>
+                  <Box>
+                    <Heading size='xs' textTransform='uppercase'>
+                    User count
+                    </Heading>
+                    <Text pt='1' fontSize='md'>
+                    {Data.twitteredUserCount} 
+                    </Text>
+                  </Box>
+                  <Box>
+                    <Heading size='xs' textTransform='uppercase'>
+                    Distributed  points
+                    </Heading>
+                    <Text pt='1' fontSize='md'>
+                    {Data.twitteredDistributedPoints} 
+                    </Text>
+                  </Box>
                 </CardBody>
               </Card>
             </GridItem>
@@ -66,14 +78,47 @@ export default function App() {
                   <Heading size='md'>Bridge Airdrop</Heading>
                 </CardHeader>
                 <CardBody>
-                  <div>
-                    <div>
-                      User count: {Data.countOfBridgedETHUsers} 
-                    </div>
-                    <div>
-                      Distributed  points: {Data.bridgedETHUsersDistributedPoints}
-                    </div>
-                  </div>
+                <Box>
+                    <Heading size='xs' textTransform='uppercase'>
+                    User count
+                    </Heading>
+                    <Text pt='1' fontSize='md'>
+                    {Data.countOfBridgedETHUsers} 
+                    </Text>
+                  </Box>
+                  <Box>
+                    <Heading size='xs' textTransform='uppercase'>
+                    Distributed  points
+                    </Heading>
+                    <Text pt='1' fontSize='md'>
+                    {Data.bridgedETHUsersDistributedPoints} 
+                    </Text>
+                  </Box>
+                </CardBody>
+              </Card>
+            </GridItem>
+            <GridItem>
+              <Card>
+                <CardHeader>
+                  <Heading size='md'>Friend.tech Airdrop</Heading>
+                </CardHeader>
+                <CardBody>
+                <Box>
+                    <Heading size='xs' textTransform='uppercase'>
+                    User count
+                    </Heading>
+                    <Text pt='1' fontSize='md'>
+                    {Data.friendTechUserCount} 
+                    </Text>
+                  </Box>
+                  <Box>
+                    <Heading size='xs' textTransform='uppercase'>
+                    Distributed  points
+                    </Heading>
+                    <Text pt='1' fontSize='md'>
+                    {Data.friendTechDistributedPoints} 
+                    </Text>
+                  </Box>
                 </CardBody>
               </Card>
             </GridItem>
